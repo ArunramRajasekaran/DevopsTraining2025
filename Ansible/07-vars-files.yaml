@@ -1,0 +1,9 @@
+- name: variables
+  hosts: local
+  connection: local
+  vars_files: # PLAY level variables
+  - course.yaml
+  tasks:
+  - name: print couse information
+    ansible.builtin.debug:
+      msg: "Course is {{ COURSE }}, Duration is {{ DURATION }}, Trainer is {{ TRAINER }}"
